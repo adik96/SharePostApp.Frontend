@@ -1,0 +1,57 @@
+.login {
+    height: 100%;
+
+    &__mat-card-login {
+        position: relative;
+        top: 0;
+        opacity: 1;
+        float: left;
+        padding: 60px 50px 40px 50px;
+        width: 100%;
+        background: #f3edfc;
+        border-radius: 10px;
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        z-index: 5;
+        max-width: 400px;
+    
+        &.back {
+            transform: scale(.95);
+            -webkit-transform: scale(.95);
+            -ms-transform: scale(.95);
+            top: -20px;
+            opacity: .8;
+            z-index: -1;
+          }
+    
+          
+      }
+
+    &__mat-card-header {
+        text-align: center;
+        width: 100%;
+        display: block;
+        font-weight: 700;
+      }
+
+      &__mat-card-title {
+        font-size: 30px;
+        margin: 0;
+      }
+
+      &__login-form {
+        min-width: 100%;
+        max-width: 300px;
+        width: 100%;
+      }
+
+      &__item {
+        width: 100%
+      }
+
+      &__mat-card-login {
+        padding: 40px 70px 50px;
+      }
+  }
+  

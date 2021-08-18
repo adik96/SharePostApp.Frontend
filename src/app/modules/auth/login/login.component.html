@@ -1,0 +1,31 @@
+<div class="login" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="login__mat-card-login">
+    <mat-card-header class="login__mat-card-header">
+      <mat-card-title class="login__mat-card-title">Login</mat-card-title>
+    </mat-card-header>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="login__login-form">
+
+      <mat-card-content>
+        <mat-form-field class="login__item">
+          <input type="email" matInput formControlName="email" placeholder="Email">
+        </mat-form-field>
+        <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+        <mat-error *ngIf="hasError('email', 'email')">Email is invalid</mat-error>
+
+        <mat-form-field class="login__item">
+          <input type="password" matInput formControlName="password" placeholder="Password">
+        </mat-form-field>
+        <mat-error *ngIf="hasError('password', 'required')">Password is required</mat-error>
+        <mat-error *ngIf="hasError('password', 'serverError')" [textContent]="getError('password', 'serverError')">
+        </mat-error>
+
+      </mat-card-content>
+
+      <button type="submit" [disabled]="form.invalid" mat-raised-button color="primary"
+        class="login__item">Login</button>
+    </form>
+
+    <mat-error style="margin: 10px auto; text-align: center;" *ngIf="hasResponseError()" [textContent]="responseError"></mat-error>
+  </mat-card>
+</div>
